@@ -39,11 +39,20 @@ class PontoApp:
         self.resultado_label_ponto = tk.Label(self.ponto_frame, text='')
         self.resultado_label_ponto.pack(pady=5)
 
-        self.bater_entrada_button = tk.Button(self.ponto_frame, text='Bater Entrada', command=self.bater_entrada)
-        self.bater_entrada_button.pack(pady=10)
+        self.buttons_frame = tk.Frame(self.ponto_frame)
+        self.buttons_frame.pack()
 
-        self.bater_saida_button = tk.Button(self.ponto_frame, text='Bater Saída', command=self.bater_saida)
-        self.bater_saida_button.pack(pady=10)
+        # botão bater entrada
+        self.bater_entrada_button = tk.Button(self.buttons_frame, text='Bater Entrada', command=self.bater_entrada)
+        self.bater_entrada_button.pack(side=tk.LEFT, padx=5, pady=5)
+
+        # botão bater saída
+        self.bater_saida_button = tk.Button(self.buttons_frame, text='Bater Saída', command=self.bater_saida)
+        self.bater_saida_button.pack(side=tk.LEFT, padx=5, pady=5)
+
+        # botão abrir backup
+        self.backup_button = tk.Button(self.ponto_frame, text='Abrir Backup', command=self.abrir_janela_backup)
+        self.backup_button.pack(pady=10)
 
         self.hora_label = tk.Label(self.ponto_frame, text='')
         self.hora_label.pack(pady=10)
@@ -87,10 +96,6 @@ class PontoApp:
 
         self.cancelar_matricula_button = tk.Button(self.cancelar_matricula_frame, text='Cancelar Matrícula', command=self.cancelar_matricula)
         self.cancelar_matricula_button.pack(pady=10)
-
-        # backup
-        self.backup_button = tk.Button(self.ponto_frame, text='Abrir Backup', command=self.abrir_janela_backup, width=20, height=2)
-        self.backup_button.pack(pady=10)
 
         self.atualizar_hora_ponto()
         self.atualizar_lista_professores()
