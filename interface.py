@@ -119,7 +119,7 @@ class PontoApp:
             return
 
         try:
-            matricula = int(matricula_str)
+            matricula = str(matricula_str)
         except ValueError:
             messagebox.showwarning("Registro de Entrada", "Matrícula inválida. Insira uma matrícula válida com 8 números.")
             return
@@ -130,7 +130,7 @@ class PontoApp:
         self.atualizar_hora_ponto()
 
     def bater_saida(self):
-        matricula = int(self.matricula_entry_ponto.get())
+        matricula = str(self.matricula_entry_ponto.get())
         resultado = self.registrador_ponto.registrar_saida(matricula)
         self.atualizar_lista_professores()
         self.resultado_label_ponto.config(text=resultado)
