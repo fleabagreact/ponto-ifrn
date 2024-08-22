@@ -20,7 +20,7 @@ Este projeto é um sistema de controle de ponto eletrônico desenvolvido em Pyth
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu_usuario/seu_repositorio.git
+   git clone https://github.com/fleabagreact/ponto-ifrn.git
    ```
 
 2. Instale as dependências (caso haja):
